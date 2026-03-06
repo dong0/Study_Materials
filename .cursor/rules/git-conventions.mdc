@@ -1,0 +1,104 @@
+---
+description: Git commit message、分支命名与版本控制规范
+alwaysApply: true
+---
+
+# Git 规范
+
+## Commit Message 格式
+
+```
+type(scope): description
+
+[可选] BREAKING CHANGE: 描述破坏性变更
+```
+
+### type 枚举
+
+- `feat` -- 新功能
+- `fix` -- 修复 bug
+- `docs` -- 文档内容新增或修改
+- `style` -- 代码格式调整（不影响功能）
+- `refactor` -- 代码重构（不影响功能）
+- `test` -- 测试相关变更
+- `chore` -- 构建、配置、杂项变更
+- `perf` -- 性能优化
+- `ci` -- CI/CD 配置变更
+
+### scope
+
+使用文档主题名或功能模块名（小写英文），如：
+- `controllers`、`pipes`、`guards`、`interceptors`
+- `modules`、`providers`、`middleware`、`exception-filters`
+- `custom-decorators`、`custom-providers`
+- `config`、`build`、`deps`（依赖管理）
+
+非文档变更可省略 scope。
+
+### description
+
+- 使用中文描述变更内容，简洁明了
+- 长度控制在 50 个字符以内
+- 以动词开头，使用祈使句语气（如：添加、修改、修复、删除）
+
+### Breaking Changes
+
+对于破坏性变更，在 commit message 末尾添加：
+```
+BREAKING CHANGE: 描述具体的破坏性变更内容
+```
+
+### 分支命名规范
+
+```
+type/description 或 feature/description 或 bugfix/issue-number
+```
+
+- `main` -- 主分支，稳定版本
+- `develop` -- 开发分支
+- `feature/*` -- 新功能分支，如 `feature/add-custom-providers-doc`
+- `bugfix/*` -- 修复分支，如 `bugfix/fix-translation-error`
+- `hotfix/*` -- 紧急修复分支
+
+### 版本控制（可选）
+
+遵循 [Semantic Versioning](https://semver.org/)：
+- `MAJOR.MINOR.PATCH` (如: 1.0.0)
+- `feat` 提交增加 MINOR 版本
+- `fix` 提交增加 PATCH 版本
+- BREAKING CHANGE 增加 MAJOR 版本
+
+### Emoji 支持（可选）
+
+可选择性在 type 前添加 emoji：
+- ✨ `feat` -- 新功能
+- 🐛 `fix` -- 修复 bug
+- 📚 `docs` -- 文档
+- 🎨 `style` -- 格式
+- 🔄 `refactor` -- 重构
+- ✅ `test` -- 测试
+- 🔧 `chore` -- 配置
+- ⚡ `perf` -- 性能
+
+### 示例
+
+- `feat(custom-providers): 添加自定义提供者文档翻译`
+- `fix(controllers): 修正路由参数示例代码错误`
+- `docs(pipes): 更新管道章节的翻译说明`
+- `style: 统一代码块语言标识格式`
+- `refactor(config): 重构配置文件的目录结构`
+- `test: 添加单元测试用例`
+- `chore: 更新依赖包版本`
+
+带破坏性变更的示例：
+```
+feat(auth): 重构认证模块接口
+
+BREAKING CHANGE: AuthService.validateUser() 方法签名已更改
+```
+
+带 emoji 的示例：
+```
+✨ feat(custom-providers): 添加自定义提供者文档翻译
+🐛 fix(controllers): 修正路由参数示例代码错误
+```

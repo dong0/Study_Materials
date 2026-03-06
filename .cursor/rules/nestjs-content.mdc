@@ -1,0 +1,23 @@
+---
+description: NestJS 文档内容与代码示例规范
+globs: NestJS/docs/**/*.md
+alwaysApply: false
+---
+
+# NestJS 内容规范
+
+## 代码示例
+
+- 代码示例必须使用 TypeScript，且须为可运行的完整代码片段
+- 如果 NestJS 官方文档同时提供 TS 和 JS 两种版本，两种都保留
+- 装饰器用法必须附带完整的 import 语句
+
+## 概念解释
+
+- 重要概念需给出简明的中文解释，而不仅仅是逐句翻译
+- 涉及的 NestJS CLI 命令保留原文，如 `nest g controller [name]`
+
+## 内容来源
+
+- 内容基于 NestJS 官方英文文档翻译整理
+- 每篇文档对应官方文档的一个章节
