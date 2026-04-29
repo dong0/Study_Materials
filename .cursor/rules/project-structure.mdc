@@ -7,7 +7,7 @@ alwaysApply: true
 
 ## 目录结构
 
-- 学习文档按学习对象存放在对应的 `docs/` 目录下，如 `NestJS/docss`
+- 学习文档按学习对象存放在对应的 `docs/` 目录下，如 `NestJS/docs`
 - 文件命名格式：`{学习对象} - {English Topic Name}.zh.md`
 - 文档主题应对应官方文档的章节划分
 
